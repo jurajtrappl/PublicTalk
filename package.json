@@ -4,7 +4,9 @@
     "description": "Social network where people talk.",
     "main": "bin/www",
     "scripts": {
-        "start": "nodemon"
+        "start": "nodemon backend/server",
+        "client": "npm start --prefix frontend",
+        "dev": "concurrently \"npm start\" \"npm run client\""
     },
     "repository": {
         "type": "git",
@@ -23,14 +25,15 @@
     },
     "homepage": "https://github.com/jurajtrappl/smalltalk#readme",
     "dependencies": {
+        "axios": "^0.21.1",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "helmet": "^4.6.0",
         "mongoose": "^5.13.3",
-        "morgan": "^1.10.0",
-        "signale": "^1.4.0"
+        "morgan": "^1.10.0"
     },
     "devDependencies": {
+        "concurrently": "^6.2.0",
         "eslint": "^7.31.0",
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-plugin-import": "^2.23.4",

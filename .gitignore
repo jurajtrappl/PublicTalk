@@ -7,10 +7,13 @@ yarn-error.log*
 lerna-debug.log*
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
+/build
 build/Release
 
 # Dependency directories
 node_modules/
+/.pnp
+.pnp.js
 
 # Optional npm cache directory
 .npm
