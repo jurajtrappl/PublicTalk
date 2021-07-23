@@ -1,0 +1,40 @@
+{
+    "name": "smalltalk",
+    "version": "1.0.0",
+    "description": "Social network where people talk.",
+    "main": "bin/www",
+    "scripts": {
+        "start": "nodemon"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jurajtrappl/smalltalk.git"
+    },
+    "keywords": [
+        "social",
+        "network",
+        "talking",
+        "chat"
+    ],
+    "author": "Martin Mucha, Juraj Trappl",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jurajtrappl/smalltalk/issues"
+    },
+    "homepage": "https://github.com/jurajtrappl/smalltalk#readme",
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "helmet": "^4.6.0",
+        "mongoose": "^5.13.3",
+        "morgan": "^1.10.0",
+        "signale": "^1.4.0"
+    },
+    "devDependencies": {
+        "eslint": "^7.31.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-plugin-import": "^2.23.4",
+        "eslint-plugin-react": "^7.24.0",
+        "nodemon": "^2.0.12"
+    }
+}
