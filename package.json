@@ -2,7 +2,6 @@
     "name": "smalltalk",
     "version": "1.0.0",
     "description": "Social network where people talk.",
-    "main": "bin/www",
     "scripts": {
         "start": "nodemon backend/server",
         "client": "npm start --prefix frontend",
@@ -26,6 +25,8 @@
     "homepage": "https://github.com/jurajtrappl/smalltalk#readme",
     "dependencies": {
         "axios": "^0.21.1",
+        "bootstrap": "^5.0.0-beta3",
+        "bootstrap-icons": "^1.5.0",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "helmet": "^4.6.0",
@@ -38,6 +39,7 @@
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-plugin-import": "^2.23.4",
         "eslint-plugin-react": "^7.24.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
         "nodemon": "^2.0.12"
     }
 }

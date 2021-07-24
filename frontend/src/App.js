@@ -1,27 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Messages from './components/Messages';
+import UserList from './components/UserList';
 
 const App = () => {
-  const [messages, setMessages] = useState([])
-  const getData = async() => {
-    const res = await axios.get('/index')
-    setMessages(res.data)
-  }
-
-  useEffect(() => {
-    getData()
-  }, [])
- 
   return (
     <div>
-      {messages.map(
-        m => 
-          <p>
-            <h4>Username: {m.username}</h4>
-            <h2> Content: {m.content}</h2>
-          </p>
-        )
-      }
+      <div className="row w-100">
+        <div className="col-9">
+          <Messages />
+        </div>
+        <div className="col-3">
+          <UserList />
+        </div>
+      </div>
     </div>
   )
 }
