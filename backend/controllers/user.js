@@ -26,6 +26,8 @@ const register = (req, res) => {
                 });
             } else {
                 bcrypt.genSalt(10, function (err, salt) {
+                    if (err) throw err;
+
                     bcrypt.hash(req.body.password, salt, function (err, hash) {
                         if (err) throw err;
 
@@ -44,7 +46,7 @@ const register = (req, res) => {
         })
         .catch(err => res.status(500).send({
                 message:
-                    err.message || 'Some error when retrieving all messages.'
+                    err.message || 'Some error when signing up.'
             })
         );
 }
@@ -103,7 +105,7 @@ const login = (req, res) => {
         })
         .catch(err => res.status(500).send({
             message:
-                err.message || 'Some error when retrieving all messages.'
+                err.message || 'Some error when signing in.'
         })
     );
 }

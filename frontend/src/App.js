@@ -7,12 +7,14 @@ import { setCurrentUser, logoutUser } from './actions/authActions';
 import { Provider } from 'react-redux';
 import store from './store';
 
-import Navbar from './components/Layout/Navbar';
 import Landing from './components/Layout/Landing';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
 import PrivateRoute from './components/PrivateRoute';
 import Dashboard from './components/Dashboard';
+import Navbar from './components/Layout/Navbar';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -37,24 +39,22 @@ if (localStorage.jwtToken) {
   }
 }
 
-class App extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <BrowserRouter>
-          <div>
-            <Navbar />
-            <Route exact path='/' component={Landing} />
-            <Route exact path='/register' component={Register} />
-            <Route exact path='/login' component={Login} />
-            <Switch>
-              <PrivateRoute exact path='/dashboard' component={Dashboard} />
-            </Switch>
-          </div>
-        </BrowserRouter>
-      </Provider>
-    )
-  }
+function App() {
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <>
+          <Navbar />
+          <Route exact path='/' component={Landing} />
+          <Route exact path='/register' component={Register} />
+          <Route exact path='/login' component={Login} />
+          <Switch>
+            <PrivateRoute exact path='/dashboard' component={Dashboard} />
+          </Switch>
+        </>
+      </BrowserRouter>
+    </Provider>
+  );
 }
 
 export default App;

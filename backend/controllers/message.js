@@ -16,12 +16,13 @@ function findAll (req, res) {
 
 // Insert a new message.
 function insertOne (req, res) {
-    if (req.body.message.content === '') {
+    console.log(req.body);
+    if (req.body.content === '') {
         res.status(400).send({ message: 'Message can not be empty!' });
         return;
     }
 
-    Message.create(req.body.message)
+    Message.create(req.body)
         .then(data => res.send(data))
         .catch(err => {
             res.status(500).send({

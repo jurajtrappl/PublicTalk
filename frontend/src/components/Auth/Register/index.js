@@ -56,7 +56,7 @@ class Register extends React.Component {
 
         return (
             <div className="container">
-                <div className="row">
+                <div className="row justify-content-center">
                     <div className="col s8 offset-s2">
                         <Link to="/" className="btn-flat waves-effect">
                             <i className="material-icons left">keyboard_backspace</i> Back to
@@ -120,16 +120,7 @@ class Register extends React.Component {
                                 <span className="red-text">{errors.password2}</span>
                             </div>
                             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                                <button
-                                    style={{
-                                        width: "150px",
-                                        borderRadius: "3px",
-                                        letterSpacing: "1.5px",
-                                        marginTop: "1rem"
-                                    }}
-                                    type="submit"
-                                    className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                                >
+                                <button type="submit" className="btn button">
                                     Sign up
                                 </button>
                             </div>
@@ -145,7 +136,7 @@ Register.propTypes = {
     registerUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
-  };
+};
 
 const mapStateToProps = state => ({
     auth: state.auth,
@@ -155,4 +146,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     { registerUser }
-) (withRouter(Register));
+)(withRouter(Register));

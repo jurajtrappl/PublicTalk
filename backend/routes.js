@@ -3,7 +3,7 @@ const auth = require('./routes/auth');
 
 module.exports = (app) => {
     app.use('/', auth);
-    app.use('/index', messages);
+    app.use('/messages', messages);
 
     app.all('/*', (req, res) => {
         res.status(404).send('Not found.');
