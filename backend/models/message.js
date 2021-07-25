@@ -3,11 +3,15 @@ const mongoose = require('mongoose');
 const messageSchema = new mongoose.Schema({
     username: {
         type: String,
-        required: [ true, 'Username is required.' ]
+        required: true
     },
     content: {
         type: String,
-        required: [ true, 'Content is required' ]
+        required: true
+    },
+    time: {
+        type: Date,
+        required: true
     }
 });
 
