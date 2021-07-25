@@ -1,8 +1,10 @@
+const cors = require('cors');
 const dotenv = require('dotenv');
 const express = require('express');
 const helmet = require('helmet');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const passport = require('passport');
 const path = require('path');
 
 dotenv.config({
@@ -29,6 +31,11 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
+app.use(cors());
+app.use(passport.initialize());
+
+// Passport config
+require('./utils/passport')(passport);
 
 // Apply routes
 require('./routes')(app);

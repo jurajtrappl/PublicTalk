@@ -15,6 +15,11 @@ export default class Messages extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    onLogoutClick = e => {
+        e.preventDefault();
+        this.props.logoutUser();
+    }
+
     handleChange(event) {
         this.setState({ value: event.target.value });
     }

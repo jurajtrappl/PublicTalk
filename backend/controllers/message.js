@@ -1,4 +1,4 @@
-const Message = require('./message.model');
+const Message = require('../models/message');
 
 // Returns all messages.
 function findAll (req, res) {

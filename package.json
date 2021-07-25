@@ -2,6 +2,7 @@
     "name": "smalltalk",
     "version": "1.0.0",
     "description": "Social network where people talk.",
+    "main": "backend/server",
     "scripts": {
         "start": "nodemon backend/server",
         "client": "npm start --prefix frontend",
@@ -25,13 +26,18 @@
     "homepage": "https://github.com/jurajtrappl/smalltalk#readme",
     "dependencies": {
         "axios": "^0.21.1",
-        "bootstrap": "^5.0.0-beta3",
-        "bootstrap-icons": "^1.5.0",
+        "bcrypt": "^5.0.1",
+        "cors": "^2.8.5",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "helmet": "^4.6.0",
+        "is-empty": "^1.2.0",
+        "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.13.3",
-        "morgan": "^1.10.0"
+        "morgan": "^1.10.0",
+        "passport": "^0.4.1",
+        "passport-jwt": "^4.0.0",
+        "validator": "^13.6.0"
     },
     "devDependencies": {
         "concurrently": "^6.2.0",
